@@ -6,7 +6,7 @@ https://github.com/moowcharnfu/dev-docs/blob/master/docker%E5%AE%89%E8%A3%85.md
 
 docker search jenkins
 
-2.拉取jenkis镜像库
+2.拉取jenkins镜像库
 
 docker pull jenkins/jenkins
 
