@@ -24,4 +24,27 @@ docker run -d --name mongo -p 27017:27017 -v /home/mongo:/data/db mongo
 4.查看日志
 docker logs -f mongo
 
+# 初始化mongo数据库
 6.登录使用mongo
+
+docker exec -it mongo /bin/bash
+
+进入mongo命令界面
+
+mongo
+
+1.使用admin数据库
+
+use admin
+
+2.创建新用户
+
+db.createUser({user:"admin",pwd:"admin",roles:["userAdminAnyDatabase"]})
+
+3.验证用户可用性,返回1表示创建成功
+
+db.auth("admin","admin")
+
+4.退出
+
+exit
