@@ -19,6 +19,7 @@ docker image ls
 # -p 将容器内部端口向外映射
 # --name 命名容器名称
 设置rabbmitmq用户名和密码为amdin/admin
+
 docker run -d --name rabbitmq -e RABBITMQ_DEFAULT_USER=admin -e RABBITMQ_DEFAULT_PASS=admin -p 15672:15672 -p 5672:5672 rabbitmq:management
 
 4.查看日志 docker logs -f rabbitmq
