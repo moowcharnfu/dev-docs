@@ -1,0 +1,39 @@
+1. nodejs安装包
+
+https://nodejs.org/en/
+
+2.查看相关版本
+
+npm -v
+
+node -v
+
+3.升级npm包
+
+npm install -g npm
+
+[linux]nodejs 升级
+
+npm install -g n --force
+
+升级到最新稳定版
+
+n stable
+
+[windows不支持n,需要重新安装]
+
+4.清楚缓存
+
+npm cache clean --force
+
+5.切换镜像仓库
+
+npm config set registry=http://registry.npm.taobao.org
+
+检查镜像仓库是否可行
+
+npm config get registry
+
+6.更新镜像仓库
+
+npm update -g
