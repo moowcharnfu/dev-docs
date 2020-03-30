@@ -37,3 +37,13 @@ npm config get registry
 6.更新镜像仓库
 
 npm update -g
+
+---------------------
+
+ 安装淘宝cnpm
+ 
+ npm install -g cnpm --registry=https://registry.npm.taobao.org
+ 
+ 查看版本号
+ 
+ cnpm -v
