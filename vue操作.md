@@ -3,6 +3,7 @@
 https://www.jetbrains.com/webstorm/
 
 2.全局安装vue-cli
+
 npm install -g vue-cli
 
 检查vue的状态
