@@ -6,7 +6,7 @@ Xms初始堆大小
 
 Xmx最大堆大小
 
-XX:+UseG1 G1垃圾收集器, 比CMSGC(并发标记清除)\SerialGC(串行)\parallelGC(并行)高效
+XX:+UseG1GC 使用G1垃圾收集器, 此gc比CMSGC(并发标记清除)\SerialGC(串行)\parallelGC(并行)高效
 
 -Xloggc:E:\opt\gc\logback-gc.log gc的日志文件位置
 
