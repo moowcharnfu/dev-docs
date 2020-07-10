@@ -1,0 +1,28 @@
+1.下载kafka和zookeeper(kafka依赖zookeeper)
+wget https://mirror.bit.edu.cn/apache/kafka/2.5.0/kafka_2.13-2.5.0.tgz
+wget https://mirror.bit.edu.cn/apache/zookeeper/zookeeper-3.6.1/apache-zookeeper-3.6.1-bin.tar.gz
+
+2.解压
+tar zxvf 对应的包
+
+3.配置环境
+1) jdk8
+vim kafka_2.13-2.5.0/bin/kafka-run-class.sh
+export JAVA_HOME="/usr/local/jdk1.8.0_191"
+2) zookeeper配置(默认)
+3) kafka配置(默认)
+
+4.启动
+1) 启动zookeeper
+sh  kafka_2.13-2.5.0/bin/zookeeper-server-start.sh -daemon  kafka_2.13-2.5.0/config/zookeeper.properties
+2) 启动kafka
+sh kafka_2.13-2.5.0/bin/kafka-server-start.sh -daemon kafka_2.13-2.5.0/config/server.properties
+
+5.创建主题
+sh kafka_2.13-2.5.0/bin/kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic test
+查看所有主题
+sh kafka_2.13-2.5.0/bin/kafka-topics.sh --list --bootstrap-server localhost:9092
+
+6.发送/消费
+sh kafka_2.13-2.5.0/bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --topic test
+sh kafka_2.13-2.5.0/bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning
