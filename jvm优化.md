@@ -1,6 +1,6 @@
 vm-options优化参数
 
--Xms500M -Xmx500M -XX:+PrintGCDetails -XX:+UseG1GC -XX:+PrintHeapAtGC -Xloggc:E:\opt\gc\logback-gc.log
+-Xms500M -Xmx500M -XX:+UseG1GC -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintHeapAtGC -Xloggc:E:\opt\gc\logback-gc.log
 
 Xms初始堆大小
 
