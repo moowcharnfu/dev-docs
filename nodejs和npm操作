@@ -47,3 +47,19 @@ npm update -g
  查看版本号
  
  cnpm -v
+
+---------------
+
+Node Sass更新
+
+原始
+
+npm uninstall --save node-sass
+
+npm install --save node-sass
+
+淘宝镜像
+
+cnpm uninstall --save node-sass
+
+cnpm install --save node-sass
