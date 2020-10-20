@@ -24,7 +24,7 @@ mkdir -p /data/zk1/data
 
 mkdir -p /data/zk1/conf
 
-/data/zk1/data/zoo.cfg
+/data/zk1/conf/zoo.cfg
 # The number of milliseconds of each tick
 tickTime=2000
 # The number of ticks that the initial 
@@ -55,13 +55,17 @@ clientPort=2181
 #autopurge.purgeInterval=1
 # 保留两天日志20个快照文件
 autopurge.snapRetainCount=20
+
 autopurge.purgeInterval=48
 
 server.1=192.168.4.55:3881:3884
+
 server.2=192.168.4.109:3882:3885
+
 server.3=192.168.4.110:3893:3896
 
 /data/zk1/data/myid
+
 echo 1 > /data/zk1/data/myid
 
 zk2:
@@ -70,7 +74,7 @@ mkdir -p /data/zk2/data
 
 mkdir -p /data/zk2/conf
 
-/data/zk2/data/zoo.cfg
+/data/zk2/conf/zoo.cfg
 # The number of milliseconds of each tick
 tickTime=2000
 # The number of ticks that the initial 
@@ -82,7 +86,7 @@ syncLimit=5
 # the directory where the snapshot is stored.
 # do not use /tmp for storage, /tmp here is just 
 # example sakes.
-dataDir=/data/zk1/data
+dataDir=/data/zk2/data
 # the port at which the clients will connect
 clientPort=2181
 # the maximum number of client connections.
@@ -101,13 +105,17 @@ clientPort=2181
 #autopurge.purgeInterval=1
 # 保留两天日志20个快照文件
 autopurge.snapRetainCount=20
+
 autopurge.purgeInterval=48
 
 server.1=192.168.4.55:3881:3884
+
 server.2=192.168.4.109:3882:3885
+
 server.3=192.168.4.110:3893:3896
 
 /data/zk2/data/myid
+
 echo 2 > /data/zk2/data/myid
 
 zk3:
@@ -116,7 +124,7 @@ mkdir -p /data/zk3/data
 
 mkdir -p /data/zk3/conf
 
-/data/zk3/data/zoo.cfg
+/data/zk3/conf/zoo.cfg
 # The number of milliseconds of each tick
 tickTime=2000
 # The number of ticks that the initial 
@@ -128,7 +136,7 @@ syncLimit=5
 # the directory where the snapshot is stored.
 # do not use /tmp for storage, /tmp here is just 
 # example sakes.
-dataDir=/data/zk1/data
+dataDir=/data/zk3/data
 # the port at which the clients will connect
 clientPort=2181
 # the maximum number of client connections.
@@ -147,13 +155,17 @@ clientPort=2181
 #autopurge.purgeInterval=1
 # 保留两天日志20个快照文件
 autopurge.snapRetainCount=20
+
 autopurge.purgeInterval=48
 
 server.1=192.168.4.55:3881:3884
+
 server.2=192.168.4.109:3882:3885
+
 server.3=192.168.4.110:3893:3896
 
 /data/zk3/data/myid
+
 echo 3 > /data/zk3/data/myid
 
 
