@@ -17,3 +17,8 @@ systemctl start docker
 3.检查安装结果
 
 docker info
+
+
+官方doc
+
+https://docs.docker.com/engine/reference/commandline/history/
