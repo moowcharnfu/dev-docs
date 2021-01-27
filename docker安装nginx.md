@@ -17,13 +17,14 @@ docker cp nginx:/etc/nginx/nginx.conf /usr/local/nginx/conf/
 ######## nginx自定义配置 #
 
 /usr/local/nginx/conf/conf.d/default.conf
+
 location /gzs {
 
-	  alias /etc/nginx/www;
+   alias /etc/nginx/www;
    
-	  try_files $uri $uri/ /index.html;
+   try_files $uri $uri/ /index.html;
    
- 	 index index.html index.htm;
+   index index.html index.htm;
    
 }
 
