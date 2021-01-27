@@ -18,15 +18,23 @@ docker cp nginx:/etc/nginx/nginx.conf /usr/local/nginx/conf/
 
 /usr/local/nginx/conf/conf.d/default.conf
 
-location /gzs {
+#　配合vue项目
 
-   alias /etc/nginx/www;
+location / {
+
+        #root   /usr/share/nginx/html;
+        
+        root   /etc/nginx/www;
+        
+        index  index.html index.htm;
+        
+    }
+
+   location /gzs-api {
    
-   try_files $uri $uri/ /index.html;
+	proxy_pass http://192.168.4.100:8085/;
    
-   index index.html index.htm;
-   
-}
+   }
 
 
 启动nginx
