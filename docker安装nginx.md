@@ -27,6 +27,8 @@ location / {
         root   /etc/nginx/www;
         
         index  index.html index.htm;
+	
+	try_files $uri $uri/ /index.html;
         
     }
 
@@ -43,4 +45,5 @@ docker stop nginx
 
 docker rm nginx
 
+# host模式
 docker run -d -p 83:80 --net host --name nginx -v /usr/local/nginx/www:/etc/nginx/www -v /usr/local/nginx/conf/nginx.conf:/etc/nginx/nginx.conf -v /usr/local/nginx/conf/conf.d/default.conf:/etc/nginx/conf.d/default.conf -v /usr/local/nginx/logs:/var/log/nginx nginx
