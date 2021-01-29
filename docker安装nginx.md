@@ -26,7 +26,7 @@ location / {
         
         root   /etc/nginx/www;
         
-        index  index.html index.htm;
+	index  index.html index.htm;
 	
 	try_files $uri $uri/ /index.html;
         
