@@ -18,6 +18,16 @@ systemctl start docker
 
 docker info
 
+4.镜像加速
+
+cat /etc/docker/daemon.json 
+
+{
+
+  "registry-mirrors": ["http://hub-mirror.c.163.com", "https://docker.mirrors.ustc.edu.cn", "https://registry.docker-cn.com"]
+  
+}
+
 
 官方doc
 
