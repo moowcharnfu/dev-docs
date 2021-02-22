@@ -6,6 +6,10 @@ https://github.com/moowcharnfu/dev-docs/blob/master/docker%E5%AE%89%E8%A3%85.md
 
 docker search gitlab
 
+或者
+
+docker search -f stars=10 gitlab
+
 2.拉取gitlab镜像库
 
 docker pull gitlab/gitlab-ce
