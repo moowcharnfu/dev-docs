@@ -6,6 +6,10 @@ https://github.com/moowcharnfu/dev-docs/blob/master/docker%E5%AE%89%E8%A3%85.md
 
 docker search rabbitmq:management
 
+或者（超过10星）
+
+docker search -f stars=10 rabbitmq:management
+
 2.拉取rabbitmq镜像库
 
 docker pull rabbitmq:management
