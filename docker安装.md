@@ -28,6 +28,11 @@ cat /etc/docker/daemon.json
   
 }
 
+systemctl daemon-reload
+
+systemctl restart docker
+
+systemctl status docker.service
 
 官方doc
 
