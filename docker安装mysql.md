@@ -15,6 +15,7 @@ docker search -f stars=10 mysql
 docker pull mysql:5.7
 
 查看本地镜像
+
 docker image ls
 
 3.启动
