@@ -2,9 +2,9 @@ docker 安装参考
 
 https://github.com/moowcharnfu/dev-docs/blob/master/docker%E5%AE%89%E8%A3%85.md
 
-https://www.jakehu.me/2020/ldap-docker/
-
 docker 安装 ldap
+
+https://www.jakehu.me/2020/ldap-docker/
 
 -- server
 
@@ -35,13 +35,13 @@ docker run -d --restart=always --name lam -p 3890:80 \
 -- 使用总结
 
 1.创建用户
-2.
+
 一）先创建组，设定组名
 
 二）创建用户，选择分组，设置密码
 
 2.密码加密算法
-3.
+
 OpenLDAP 支持 CRYPT, MD5, SSHA 和 SHA 四种加密算法保存密码，默认使用 SSHA
 
 由于org.ldaptive.auth.AbstractCompareAuthenticationHandler默认使用SHA加密算法, 故在ldap界面创建密码优先使用SHA避免验证失败
