@@ -42,6 +42,7 @@ gitlab_rails['gitlab_shell_ssh_port'] = 8422
 
 # 修改
 unicorn['listen'] = 'localhost'
+
 unicorn['port'] = 8080
 # 修改
 nginx['listen_port'] = 80
