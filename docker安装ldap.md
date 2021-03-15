@@ -45,3 +45,43 @@ docker run -d --restart=always --name lam -p 3890:80 \
 OpenLDAP 支持 CRYPT, MD5, SSHA 和 SHA 四种加密算法保存密码，默认使用 SSHA
 
 由于org.ldaptive.auth.AbstractCompareAuthenticationHandler默认使用SHA加密算法, 故在ldap界面创建密码优先使用SHA避免验证失败
+
+
+
+######### gitlab支持ldap登陆
+vim /home/gitlab/config/gitlab.rb
+
+gitlab_rails['ldap_enabled'] = true
+
+gitlab_rails['ldap_servers'] = YAML.load <<-'EOS'
+
+  main: # 'main' is the GitLab 'provider ID' of this LDAP server
+  
+    label: 'LDAP'
+    
+    host: '192.168.4.100'
+    
+    port: 389
+    
+    uid: 'uid'
+    
+    method: 'plain' # "tls" or "ssl" or "plain"
+    
+    bind_dn: 'cn=admin,dc=lam,dc=domain'
+    
+    password: 'lam'
+    
+    allow_username_or_email_login: false
+    
+    base: 'dc=tcsl,dc=domain'
+    
+    attributes:
+    
+      username: ['uid']
+      
+      email:    ['mail']
+      
+      first_name: 'sn'
+      
+ 
+EOS
