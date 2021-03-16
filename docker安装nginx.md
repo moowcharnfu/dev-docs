@@ -18,11 +18,13 @@ docker cp nginx:/etc/nginx/nginx.conf /usr/local/nginx/conf/
 
 /usr/local/nginx/conf/conf.d/default.conf
 
-#　配合vue项目
+   #　配合vue项目
 
-location / {
+   location / {
 
-        #root   /usr/share/nginx/html;
+        #root   /usr/share/nginx/html;	
+   
+        # root会带上location访问
         
         root   /etc/nginx/www;
         
@@ -30,6 +32,18 @@ location / {
 	
         try_files $uri $uri/ /index.html;
         
+    }
+    
+   location /gzs-front {
+   
+        # alias不会带上location访问
+	
+        alias   /etc/nginx/www/;
+	
+        try_files $uri $uri/ /gzs-front;
+	
+        index  index.html index.htm;
+	
     }
 
    location /gzs-api {
