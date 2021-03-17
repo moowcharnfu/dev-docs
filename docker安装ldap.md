@@ -83,9 +83,9 @@ objectclass: organizationalUnit
 objectclass: top
 
 
-# 创建用户, 用户名最少两位
+#创建用户, 用户名最少两位
 
-# manager管理员配置
+#manager管理员配置
 
 dn: uid=李四,ou=产品,ou=测试使用中心,dc=lam,dc=domain
 
