@@ -85,8 +85,6 @@ objectclass: top
 
 #创建用户, 用户名最少两位
 
-#manager管理员配置
-
 dn: uid=李四,ou=产品,ou=测试使用中心,dc=lam,dc=domain
 
 objectclass: inetOrgPerson
@@ -103,7 +101,13 @@ uid: 李四
 
 userpassword: {SHA}fEqNCco3Yq9h5ZUglD3CZJT4lBs=
 
+#manager管理哪些目录,这是用来管理谁
+
 manager: uid=李四,ou=研发,ou=测试使用中心1,dc=lam,dc=domain
+
+#o属于哪个组织, 这里用来做被谁管理
+
+o:admin
 
 
 
@@ -123,7 +127,15 @@ cn: 李四
 
 userpassword: {SHA}fEqNCco3Yq9h5ZUglD3CZJT4lBs=
 
+#manager管理哪些目录,这是用来管理谁
+
 manager: uid=李四,ou=产品,ou=测试使用中心1,dc=lam,dc=domain
+
+#o属于哪个组织, 这里用来做被谁管理
+
+o:admin
+
+
 
 
 
