@@ -6,6 +6,8 @@ docker 安装 ldap
 
 https://www.jakehu.me/2020/ldap-docker/
 
+https://www.cnblogs.com/kevingrace/p/5773974.html
+
 -- server
 
 docker pull osixia/openldap
@@ -45,6 +47,83 @@ docker run -d --restart=always --name lam -p 3890:80 \
 OpenLDAP 支持 CRYPT, MD5, SSHA 和 SHA 四种加密算法保存密码，默认使用 SSHA
 
 由于org.ldaptive.auth.AbstractCompareAuthenticationHandler默认使用SHA加密算法, 故在ldap界面创建密码优先使用SHA避免验证失败
+
+
+3.ldif文件导入
+
+[ldap导入.ldif]
+
+#创建部门
+
+dn: ou=测试使用中心1,dc=lam,dc=domain
+
+objectclass: organizationalUnit
+
+objectclass: top
+
+
+dn: ou=产品,ou=测试使用中心1,dc=lam,dc=domain
+
+objectclass: organizationalUnit
+
+objectclass: top
+
+
+dn: ou=测试,ou=测试使用中心1,dc=lam,dc=domain
+
+objectclass: organizationalUnit
+
+objectclass: top
+
+
+dn: ou=研发,ou=测试使用中心1,dc=lam,dc=domain
+
+objectclass: organizationalUnit
+
+objectclass: top
+
+
+# 创建用户, 用户名最少两位
+
+# manager管理员配置
+
+dn: uid=李四,ou=产品,ou=测试使用中心,dc=lam,dc=domain
+
+objectclass: inetOrgPerson
+
+objectclass: organizationalPerson
+
+objectclass: person
+
+cn: 李四
+
+sn: 李四
+
+uid: 李四
+
+userpassword: {SHA}fEqNCco3Yq9h5ZUglD3CZJT4lBs=
+
+manager: uid=李四,ou=研发,ou=测试使用中心1,dc=lam,dc=domain
+
+
+
+dn: uid=李四,ou=测试,ou=测试使用中心,dc=lam,dc=domain
+
+objectclass: inetOrgPerson
+
+objectclass: organizationalPerson
+
+objectclass: person
+
+sn: 李四
+
+uid: 李四
+
+cn: 李四
+
+userpassword: {SHA}fEqNCco3Yq9h5ZUglD3CZJT4lBs=
+
+manager: uid=李四,ou=产品,ou=测试使用中心1,dc=lam,dc=domain
 
 
 
