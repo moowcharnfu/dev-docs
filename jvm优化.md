@@ -34,3 +34,17 @@ XX:G1HeapRegionSize=1M/2M/4M/8M/16M/32M G1内堆内存区块大小，G1将堆内
 
 g1gc官方文档
 https://www.oracle.com/technetwork/tutorials/tutorials-1876574.html
+
+------------------
+
+jstat -gcutil [pid] 1000 10
+
+
+hprof观察内存消耗
+
+jmap -F -dump:live,format=b,file=/tmp/[pid].hprof [pid]
+
+然后用MAT加载日志文件来观察
+
+
+
