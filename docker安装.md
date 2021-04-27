@@ -20,11 +20,15 @@ docker info
 
 4.镜像加速
 
+**使用nexus存储docker镜像, Sonatype Nexus 3 -> repositories -> Create Repository: docker (hosted) -> http端口 5000**
+
 cat /etc/docker/daemon.json 
 
 {
 
-  "registry-mirrors": ["http://hub-mirror.c.163.com", "https://docker.mirrors.ustc.edu.cn", "https://registry.docker-cn.com"]
+  "registry-mirrors": ["http://hub-mirror.c.163.com", "https://docker.mirrors.ustc.edu.cn", "https://registry.docker-cn.com"],
+  
+  "insecure-registries": ["192.168.1.1:5000" ]
   
 }
 
