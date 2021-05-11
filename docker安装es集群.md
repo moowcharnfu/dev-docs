@@ -2,7 +2,7 @@ docker 安装参考
 
 https://github.com/moowcharnfu/dev-docs/blob/master/docker%E5%AE%89%E8%A3%85.md
 
-1.查找gitlab镜像
+1.查找elasticsearch镜像
 
 docker search elasticsearch
 
