@@ -89,7 +89,7 @@ plugin.springannotation.classname_match_regex=@Bean,@Service,@Dao,@Repository
 
 ## log4j1
 
-<dependency>
+	<dependency>
   
 	<groupId>org.apache.skywalking</groupId>
   
@@ -97,9 +97,9 @@ plugin.springannotation.classname_match_regex=@Bean,@Service,@Dao,@Repository
   
 	<version>${skywalking.version}</version>
   
-</dependency>
+	</dependency>
 
-<dependency>
+	<dependency>
   
 	<groupId>org.apache.skywalking</groupId>
   
@@ -107,7 +107,7 @@ plugin.springannotation.classname_match_regex=@Bean,@Service,@Dao,@Repository
   
 	<version>${skywalking.version}</version>
   
-</dependency>
+	</dependency>
 
 -------------------------------------------------------
 
@@ -115,7 +115,7 @@ plugin.springannotation.classname_match_regex=@Bean,@Service,@Dao,@Repository
 
 log4j.rootLogger=INFO,grpc-log
 
-# skywalking日志上报功能定义
+#skywalking日志上报功能定义
 
 log4j.appender.grpc-log=org.apache.skywalking.apm.toolkit.log.log4j.v1.x.log.GRPCLogClientAppender
 
@@ -127,7 +127,7 @@ log4j.appender.grpc-log.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss.SSS} [%T
 
 ## log4j2
 
-<dependency>
+	<dependency>
   
 	<groupId>org.apache.skywalking</groupId>
   
@@ -135,9 +135,9 @@ log4j.appender.grpc-log.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss.SSS} [%T
   
 	<version>${skywalking.version}</version>
   
-</dependency>
+	</dependency>
 
-<dependency>
+	<dependency>
   
 	<groupId>org.apache.skywalking</groupId>
   
@@ -145,13 +145,13 @@ log4j.appender.grpc-log.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss.SSS} [%T
   
 	<version>${skywalking.version}</version>
   
-</dependency>
+	</dependency>
 
 -------------------------------------------------------
 
 ### log4j2.xml
 
-<Appenders>
+	<Appenders>
   
 	<!-- skywalking日志上报功能定义 -->
   
@@ -161,9 +161,9 @@ log4j.appender.grpc-log.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss.SSS} [%T
     
 	</GRPCLogClientAppender>
   
-</Appenders>
+	</Appenders>
 
-<Loggers>
+	<Loggers>
   
 	<root level="info">
   
@@ -173,12 +173,12 @@ log4j.appender.grpc-log.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss.SSS} [%T
     
 	</root>
   
-</Loggers>
+	</Loggers>
 
 
 ## logback
 
-<dependency>
+	<dependency>
   
 	<groupId>org.apache.skywalking</groupId>
   
@@ -186,9 +186,9 @@ log4j.appender.grpc-log.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss.SSS} [%T
   
 	<version>${skywalking.version}</version>
   
-</dependency>
+	</dependency>
 
-<dependency>
+	<dependency>
   
 	<groupId>org.apache.skywalking</groupId>
   
@@ -196,7 +196,7 @@ log4j.appender.grpc-log.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss.SSS} [%T
   
 	<version>${skywalking.version}</version>
   
-</dependency>
+	</dependency>
 
 -------------------------------------------------------
 
@@ -204,7 +204,7 @@ log4j.appender.grpc-log.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss.SSS} [%T
 
 <!-- skywalking日志上报功能定义 -->
 
-<appender name="grpc-log" class="org.apache.skywalking.apm.toolkit.log.logback.v1.x.log.GRPCLogClientAppender">
+	<appender name="grpc-log" class="org.apache.skywalking.apm.toolkit.log.logback.v1.x.log.GRPCLogClientAppender">
   
 	<encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
   
@@ -216,15 +216,15 @@ log4j.appender.grpc-log.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss.SSS} [%T
     
 	</encoder>
   
-</appender>
+	</appender>
 
-<root level="INFO">
+	<root level="INFO">
   
 	<!-- skywalking日志上报功能实现 -->
   
 	<appender-ref ref="grpc-log" />
   
-</root>
+	</root>
 
 
 
