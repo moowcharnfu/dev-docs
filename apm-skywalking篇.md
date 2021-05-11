@@ -1,32 +1,32 @@
-1.下载
+# 1.下载
 
-# 官方文档
+## 官方文档
 
 https://skywalking.apache.org/docs/
 
 https://skywalking.apache.org/docs/main/v8.5.0/readme/
 
 
-# 下载地址
+## 下载地址
 
 https://archive.apache.org/dist/skywalking/
 
 
-2.配置
+# 2.配置
 
-#####  skywalking-oap-server
+## skywalking-oap-server
 
 conf/application.yml
 
 修改存储方式为es并配置es地址
 
 
-#####   skywalking-client
+## skywalking-client
 
 agent/config/agent.config
 
-# 增加
-# 日志上报配置
+### 增加
+### 日志上报配置
 
 plugin.toolkit.log.grpc.reporter.server_host=${SW_GRPC_LOG_SERVER_HOST:127.0.0.1}
 
@@ -39,7 +39,7 @@ plugin.toolkit.log.grpc.reporter.upstream_timeout=${SW_GRPC_LOG_GRPC_UPSTREAM_TI
 agent.keep_tracing=true
 
 
-# 显示参数配置
+### 显示参数配置
 
 plugin.mongodb.trace_param=true
 
@@ -80,14 +80,14 @@ plugin.lettuce.redis_parameter_max_length=128
 plugin.springannotation.classname_match_regex=@Bean,@Service,@Dao,@Repository
 
 
-3.项目上报日志(可选)
+# 3.项目上报日志(可选)
 
 <!-- 8.4.0 GRPCLogClientAppender 日志有坑, 升级到8.5.0来支持时间格式-->
 
 <skywalking.version>8.5.0</skywalking.version>
 
 
-#log4j1
+## log4j1
 
 <dependency>
   
@@ -111,7 +111,7 @@ plugin.springannotation.classname_match_regex=@Bean,@Service,@Dao,@Repository
 
 -------------------------------------------------------
 
-log4j.properties
+### log4j.properties
 
 log4j.rootLogger=INFO,grpc-log
 
@@ -125,7 +125,7 @@ log4j.appender.grpc-log.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss.SSS} [%T
 
 
 
-#log4j2
+## log4j2
 
 <dependency>
   
@@ -149,7 +149,7 @@ log4j.appender.grpc-log.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss.SSS} [%T
 
 -------------------------------------------------------
 
-log4j2.xml
+### log4j2.xml
 
 <Appenders>
   
@@ -176,7 +176,7 @@ log4j2.xml
 </Loggers>
 
 
-#logback
+## logback
 
 <dependency>
   
@@ -200,7 +200,7 @@ log4j2.xml
 
 -------------------------------------------------------
 
-logback.xml
+### logback.xml
 
 <!-- skywalking日志上报功能定义 -->
 
@@ -228,9 +228,9 @@ logback.xml
 
 
 
-4.启动项目
+# 4.启动项目
 
-启动参数增加
+## 启动参数增加
 
 -javaagent:${skywalking-agent.jar地址如 /data/agent/skywalking-agent.jar} # 探针Agent jar 地址
 
