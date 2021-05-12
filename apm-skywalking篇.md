@@ -23,6 +23,8 @@ conf/application.yml
 
 ## skywalking-client
 
+!!!将optional-plugins下的所有jar添加到plugins下, 使其生效得到更多apm体验
+
 agent/config/agent.config
 
 ### 增加
