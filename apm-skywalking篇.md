@@ -82,7 +82,7 @@ plugin.lettuce.redis_parameter_max_length=128
 plugin.springannotation.classname_match_regex=@Bean,@Service,@Dao,@Repository
 
 
-# 3.项目上报日志(可选)
+# 3.1.项目上报日志(可选)
 
 <!-- 8.4.0 GRPCLogClientAppender 日志有坑, 升级到8.5.0来支持时间格式-->
 
@@ -228,7 +228,21 @@ log4j.appender.grpc-log.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss.SSS} [%T
   
 	</root>
 
+# 3.2.手动上报追踪请求
 
+在追踪方法上增加@Trace
+
+@Trace
+
+private String traceHello() {}
+
+# 3.3.异步线程追踪请求
+
+在异步处理类上增加@TraceCrossThread
+
+@TraceCrossThread
+
+public class MyTask implements Callable<String> {}
 
 # 4.启动项目
 
