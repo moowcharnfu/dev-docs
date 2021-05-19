@@ -259,6 +259,81 @@ public class MyTask implements Callable<String> {}
 -Dskywalking.plugin.toolkit.log.grpc.reporter.server_host=${ip地址如 10.0.1.1} # SkyWalking 服务器主机
 
 -Dskywalking.plugin.toolkit.log.grpc.reporter.server_port=${grpc端口如 11800} # SkyWalking 服务器端口
+	
+	
+# skywalking-nginx-lua
+##配置前需要安装lua环境,这里使用openresty
+	
+http://openresty.org/cn/linux-packages.html
+	
+##下载官方SkyWalking Nginx LUA文件
+	
+https://skywalking.apache.org/downloads/
+
+##nginx.config配置例子
+<pre>
+http >
+    lua_package_path "${skywalking-lua路径}/lib/?.lua;;";
+    # skywalking配置
+    # Buffer represents the register inform and the queue of the finished segment
+    lua_shared_dict tracing_buffer 100m;
+    # Init is the timer setter and keeper
+    # Setup an infinite loop timer to do register and trace report.
+    init_worker_by_lua_block {
+        local metadata_buffer = ngx.shared.tracing_buffer
+ 
+        metadata_buffer:set('serviceName', '组::服务名')
+        -- Instance means the number of Nginx deloyment, does not mean the worker instances
+        metadata_buffer:set('serviceInstanceName', '1')
+        -- type 'boolean', mark the entrySpan include host/domain
+        metadata_buffer:set('includeHostInEntrySpan', false)
+ 
+        -- set randomseed
+        require("skywalking.util").set_randomseed()
+ 
+        #http端口12800
+        require("skywalking.client"):startBackendTimer("http://10.0.1.1:12800")
+ 
+        -- Any time you want to stop reporting metrics, call `destroyBackendTimer`
+        -- require("skywalking.client"):destroyBackendTimer()
+ 
+        -- If there is a bug of this `tablepool` implementation, we can
+        -- disable it in this way
+        -- require("skywalking.util").disable_tablepool()
+ 
+        skywalking_tracer = require("skywalking.tracer")
+    }
+	
+server>
+	location = /lua {
+	  default_type text/html;  
+	  rewrite_by_lua_block {
+			skywalking_tracer:start("backend service")
+	   }
+	   
+	  content_by_lua_block {
+			ngx.say("hello, world")
+			local uri = ngx.var.uri
+			ngx.say("uri:")
+			ngx.say(uri)
+			local headers=ngx.req.get_headers()
+			local ip=headers["X-REAL-IP"] or headers["X_FORWARDED_FOR"] or ngx.var.remote_addr or "0.0.0.0"
+			ngx.say("ip:")
+			ngx.say(ip)
+	  }
+
+	  body_filter_by_lua_block {
+			if ngx.arg[2] then
+				skywalking_tracer:finish()
+			end
+	  }
+
+	  log_by_lua_block {
+			skywalking_tracer:prepareForReport()
+	  }
+	}
+</pre>
+
 
 
 
