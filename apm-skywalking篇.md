@@ -27,6 +27,9 @@ conf/application.yml
 
 agent/config/agent.config
 
+### 打开
+agent.sample_n_per_3_secs=${SW_AGENT_SAMPLE:-1}
+
 ### 增加
 ### 日志上报配置
 
@@ -259,6 +262,8 @@ public class MyTask implements Callable<String> {}
 -Dskywalking.plugin.toolkit.log.grpc.reporter.server_host=${ip地址如 10.0.1.1} # SkyWalking 服务器主机
 
 -Dskywalking.plugin.toolkit.log.grpc.reporter.server_port=${grpc端口如 11800} # SkyWalking 服务器端口
+	
+-Dskywalking.agent.sample_n_per_3_secs=${样本上报频率如全部-1} #样本上报
 	
 	
 # skywalking-nginx-lua
