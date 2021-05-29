@@ -27,6 +27,8 @@ net.ipv4.tcp_tw_reuse = 1
 net.ipv4.tcp_max_syn_backlog = 8000
 #允许多少个time_wait
 net.ipv4.tcp_max_tw_buckets = 5000
+#close_wait关闭时长(30min)
+net.ipv4.tcp_keepalive_time = 1800
 
 生效配置文件
 sysctl -p
