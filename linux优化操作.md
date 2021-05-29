@@ -15,3 +15,19 @@ echo 3 > /proc/sys/vm/drop_caches
 查看服务器连接情况
 
 netstat -n | awk '/^tcp/ {++state[$NF]} END {for(key in state) print key,"t",state[key]}'
+
+linux内核参数优化(time_wait)
+
+<pre>
+/etc/sysctl.conf增加如下配置
+#time_wait优化
+net.ipv4.tcp_tw_recycle = 1
+net.ipv4.tcp_tw_reuse = 1
+#队列数
+net.ipv4.tcp_max_syn_backlog = 8000
+#允许多少个time_wait
+net.ipv4.tcp_max_tw_buckets = 5000
+
+生效配置文件
+sysctl -p
+</pre>
