@@ -1,3 +1,19 @@
+前序操作,重装docker
+
+rpm -qa | grep docker
+
+yum remove 对应docker包
+
+curl -fsSL https://get.docker.com/ | sh
+
+systemctl restart docker
+
+stemctl enable docker
+
+docker version
+
+--------------------------------
+
 docker 安装
 
 1.添加yum源
