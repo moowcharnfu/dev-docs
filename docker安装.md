@@ -1,4 +1,12 @@
-前序操作,重装docker
+前序操作:
+
+selinux有三种模式：enforcing 强制 permissive 宽容的 diabled 禁止的，顾名思义，权限限制，从高到低
+
+cat /etc/selinux/config
+
+SELINUX=disabled
+
+重装docker
 
 rpm -qa | grep docker
 
