@@ -30,6 +30,12 @@ public class LocalDataSourceConfig {
             @Qualifier("localSqlSessionFactory") SqlSessionFactory sessionfactory) {
         return new SqlSessionTemplate(sessionfactory);
     }
+
+    // 事务管理器
+    @Bean("localTransactionManager")
+    public PlatformTransactionManager localTransactionManager(@Qualifier("localDataSource") DataSource dataSource) {
+        return new DataSourceTransactionManager(dataSource);
+    }
 }
 
 /**
@@ -38,7 +44,7 @@ public class LocalDataSourceConfig {
 @Configuration
 @MapperScan(basePackages = {"{mapper包名2}"}, sqlSessionFactoryRef = "anotherSqlSessionFactory", sqlSessionTemplateRef = "anotherSqlSessionTemplate")
 public class AnotherDataSourceConfig {
-    @Bean(name = "anotherDataSource")
+    @Bean("anotherDataSource")
     @Primary
     public DataSource anotherDataSource() throws Exception {
 		// dataSource创建实现,根据自己的dataSource类型改变,此处spring-boot-datasource写法
@@ -59,6 +65,14 @@ public class AnotherDataSourceConfig {
     public SqlSessionTemplate anotherSqlSessionTemplate(
             @Qualifier("anotherSqlSessionFactory") SqlSessionFactory sessionfactory) {
         return new SqlSessionTemplate(sessionfactory);
+    }
+
+
+    // 事务管理器
+    @Bean("anotherTransactionManager")
+    @Primary
+    public PlatformTransactionManager anotherTransactionManager(@Qualifier("anotherDataSource") DataSource dataSource) {
+        return new DataSourceTransactionManager(dataSource);
     }
 }
 </pre>
