@@ -152,6 +152,6 @@ http://localhost:21881/ls或者telnet localhost 21881 > ls
 
 dubbo工作原理
 
-![avatar](https://images2018.cnblogs.com/blog/897247/201805/897247-20180503190329662-1922174585.png)
+![image](https://images2018.cnblogs.com/blog/897247/201805/897247-20180503190329662-1922174585.png)
 
 ```
