@@ -1,3 +1,4 @@
+<pre>
 docker 安装参考
 
 https://github.com/moowcharnfu/dev-docs/blob/master/docker%E5%AE%89%E8%A3%85.md
@@ -27,3 +28,4 @@ docker image ls
 docker run -d --name rabbitmq -e RABBITMQ_DEFAULT_USER=admin -e RABBITMQ_DEFAULT_PASS=admin -p 15672:15672 -p 5672:5672 rabbitmq:management
 
 4.查看日志 docker logs -f rabbitmq
+<pre>
