@@ -1,3 +1,4 @@
+<pre>
 docker 安装参考
 
 https://github.com/moowcharnfu/dev-docs/blob/master/docker%E5%AE%89%E8%A3%85.md
@@ -56,3 +57,4 @@ docker restart gitlab
 docker logs -f gitlab
 
 6.登录使用gitlab
+</pre>
