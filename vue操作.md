@@ -1,3 +1,4 @@
+<pre>
 1.开发工具使用webstorm
 
 https://www.jetbrains.com/webstorm/
@@ -28,3 +29,4 @@ vue init webpack {输入项目名}
 4.启动项目
 
 npm run dev
+</pre>
