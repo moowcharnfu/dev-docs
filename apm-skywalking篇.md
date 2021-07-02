@@ -1,3 +1,4 @@
+```
 # 1.下载
 
 ## 官方文档
@@ -337,8 +338,7 @@ server>
 			skywalking_tracer:prepareForReport()
 	  }
 	}
-</pre>
-
-
+<pre>
+```
 
 
