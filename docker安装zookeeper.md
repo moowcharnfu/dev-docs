@@ -1,3 +1,4 @@
+<pre>
 docker 安装参考
 
 https://github.com/moowcharnfu/dev-docs/blob/master/docker%E5%AE%89%E8%A3%85.md
@@ -68,6 +69,9 @@ server.2=192.168.4.109:3881:3884
 
 server.3=192.168.4.110:3881:3884
 
+# 管理端口127.0.0.1:7070/commands
+admin.serverPort=7070
+
 /data/zk1/data/myid
 
 echo 1 > /data/zk1/data/myid
@@ -117,6 +121,9 @@ server.1=192.168.4.55:3881:3884
 server.2=192.168.4.109:3881:3884
 
 server.3=192.168.4.110:3881:3884
+
+# 管理端口127.0.0.1:7070/commands
+admin.serverPort=7070
 
 /data/zk2/data/myid
 
@@ -168,6 +175,9 @@ server.2=192.168.4.109:3881:3884
 
 server.3=192.168.4.110:3881:3884
 
+# 管理端口127.0.0.1:7070/commands
+admin.serverPort=7070
+
 /data/zk3/data/myid
 
 echo 3 > /data/zk3/data/myid
@@ -194,3 +204,4 @@ docker run -d --restart always --network host --name zookeeper-3181 -v /data/zk3
 docker stop zookeeper-3181
 
 docker rm zookeeper-3181
+</pre>
