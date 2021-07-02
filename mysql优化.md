@@ -1,3 +1,4 @@
+```
 # innodb_buffer_pool_size
 show variables like '%max_connection%';
 
@@ -28,3 +29,4 @@ select 24251/7914185*100 as '性能';
 select 34339737/(34339737+9376)*100 as '命中率';
 
 select 7914185/(7914185+24251)*100 as '命中率';
+```
