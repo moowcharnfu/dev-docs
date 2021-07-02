@@ -1,3 +1,4 @@
+<pre>
 docker 安装参考
 
 https://github.com/moowcharnfu/dev-docs/blob/master/docker%E5%AE%89%E8%A3%85.md
@@ -52,3 +53,4 @@ db.auth("admin","admin")
 4.退出
 
 exit
+</pre>
