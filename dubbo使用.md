@@ -1,10 +1,9 @@
-<pre>
+```
 
 1.安装zookeeper
 
 2.使用dubbo
 1)pom.xml
-```
 <dependencyManagement>
 	<dependencies>
 		<dependency>
@@ -65,7 +64,7 @@
 	<spring-boot.version>2.1.6.RELEASE</spring-boot.version>
 	<dubbo.version>3.0.0</dubbo.version>
 </properties>
-```
+
 
 2)创建接口层
 public interface ***Service{}
@@ -155,4 +154,4 @@ dubbo工作原理
 
 ![avatar](https://images2018.cnblogs.com/blog/897247/201805/897247-20180503190329662-1922174585.png)
 
-</pre>
+```
