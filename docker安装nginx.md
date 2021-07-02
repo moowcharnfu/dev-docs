@@ -1,3 +1,4 @@
+```
 docker 安装参考
 
 https://github.com/moowcharnfu/dev-docs/blob/master/docker%E5%AE%89%E8%A3%85.md
@@ -61,3 +62,5 @@ docker rm nginx
 
 # host模式
 docker run -d -p 83:80 --net host --name nginx -v /usr/local/nginx/www:/etc/nginx/www -v /usr/local/nginx/conf/nginx.conf:/etc/nginx/nginx.conf -v /usr/local/nginx/conf/conf.d/default.conf:/etc/nginx/conf.d/default.conf -v /usr/local/nginx/logs:/var/log/nginx nginx
+
+```
