@@ -4,6 +4,7 @@
 
 2.使用dubbo
 1)pom.xml
+```
 <dependencyManagement>
 	<dependencies>
 		<dependency>
@@ -64,6 +65,7 @@
 	<spring-boot.version>2.1.6.RELEASE</spring-boot.version>
 	<dubbo.version>3.0.0</dubbo.version>
 </properties>
+```
 
 2)创建接口层
 public interface ***Service{}
