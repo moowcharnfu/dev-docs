@@ -1,3 +1,4 @@
+<pre>
 docker 安装参考
 
 https://github.com/moowcharnfu/dev-docs/blob/master/docker%E5%AE%89%E8%A3%85.md
@@ -35,3 +36,4 @@ docker logs -f jenkins
 docker exec -it jenkins cat /var/jenkins_home/secrets/initialAdminPassword
 
 6.登录使用jenkins
+</pre>
