@@ -1,4 +1,4 @@
-<pre>
+```
 vm-options优化参数
 
 # 例子
@@ -48,4 +48,4 @@ jmap -F -dump:live,format=b,file=/tmp/[pid].hprof [pid]
 然后用MAT加载日志文件来观察
 
 
-</pre>
+```
