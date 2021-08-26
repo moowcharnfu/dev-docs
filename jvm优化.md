@@ -31,7 +31,7 @@ XX:G1HeapRegionSize=1M/2M/4M/8M/16M/32M G1内堆内存区块大小，G1将堆内
 
 处理方式: 复制, 标记, 标记清除, 标记压缩, 重置等, stw(Stop-The-World机制简称STW,全局暂停现象，全局停顿)
 
-
+------------------
 
 g1gc官方文档
 https://www.oracle.com/technetwork/tutorials/tutorials-1876574.html
