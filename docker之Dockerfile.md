@@ -45,6 +45,7 @@ docker logs -f [别名]
 
 
 ```
+spring-boot集成docker插件配置示例
 
 <!--镜像仓库的项目-->
 <docker.image.prefix>ai</docker.image.prefix>
