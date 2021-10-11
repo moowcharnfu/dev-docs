@@ -3,13 +3,13 @@ vm-options优化参数
 
 # 例子
 
-# 配置内存大小(初始化堆大小512M;最大堆大小1G;线程堆栈大小1M;永久区初始大小128M;永久区最大大小256M;老年代与新生代比例为2即新生代1/3,老年代2/3;新生代与survivor比例为8即新生代8/10,fromSpace1/10,toSpace1/10;使用G1GC垃圾收集器)
+# 配置内存大小(初始化堆大小512M;最大堆大小1G;线程堆栈大小1M;永久区初始大小128M;永久区最大大小256M;(默认)暂停时间200ms;(默认)regionsize大小1M;(默认)老年代与新生代比例为2即新生代1/3,老年代2/3;(默认)新生代与survivor比例为8即新生代8/10,fromSpace1/10,toSpace1/10;使用G1GC垃圾收集器)
 
 # version < jdk8
-# JAVA_OPTS="-Xms512m -Xmx1024m -Xss1024K -XX:PermSize=128m -XX:MaxPermSize=256m -XX:NewRatio=2 -XX:SurvivorRatio=8 -XX:+UseG1GC -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintHeapAtGC -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/tmp -Xloggc:/tmp/sso.gc.log"
+# JAVA_OPTS="-Xms512m -Xmx1024m -Xss1024K -XX:PermSize=128m -XX:MaxPermSize=256m -XX:MaxGCPauseMillis=200 -XX:G1HeapRegionSize=1M -XX:+UseG1GC -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintHeapAtGC -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/tmp -Xloggc:/tmp/sso.gc.log"
 
 # version >= jdk8(PermSize->MetaspaceSize)
-# JAVA_OPTS="-Xms512m -Xmx1024m -Xss1024K -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=256m -XX:NewRatio=2 -XX:SurvivorRatio=8 -XX:+UseG1GC -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintHeapAtGC -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/tmp -Xloggc:/tmp/sso.gc.log"
+# JAVA_OPTS="-Xms512m -Xmx1024m -Xss1024K -XX:MetaspaceSize=128m -XX:MaxMetaspaceSize=256m -XX:MaxGCPauseMillis=200 -XX:G1HeapRegionSize=1M -XX:+UseG1GC -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintHeapAtGC -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/tmp -Xloggc:/tmp/sso.gc.log"
 
 
 
