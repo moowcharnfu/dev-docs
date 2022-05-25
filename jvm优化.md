@@ -1,4 +1,7 @@
 ```
+查看jvm所有参数配置
+java -XX:+PrintFlagsFinal -version
+
 vm-options优化参数
 
 # 例子
