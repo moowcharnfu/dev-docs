@@ -6,7 +6,16 @@
 private ExecutorService executorService = new ThreadPoolExecutor(Runtime.getRuntime().availableProcessors() * 10,
           Runtime.getRuntime().availableProcessors() * 30,
           1, TimeUnit.MINUTES,
-          new LinkedBlockingQueue<>(1024));
+          new LinkedBlockingQueue<>(1024)),
+          Executors.defaultThreadFactory(),
+          // 超过数量调用线程执行
+          new ThreadPoolExecutor.CallerRunsPolicy());
+
+@PreDestroy
+public void destroy() {
+  // 停止服务前关闭
+  executorService.shutdown();
+}
           
 // 使用
 executorService.execute(Runnable**);
