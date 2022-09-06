@@ -26,4 +26,7 @@ sudo snap remove chromium firefox
 sudo apt autoremove
 sudo apt autopurge
 sudo apt autoclean
+
+# 删除应用图标
+sudo nautilus /usr/share/applications/
 ```
