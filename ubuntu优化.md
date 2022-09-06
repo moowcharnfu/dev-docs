@@ -8,4 +8,6 @@ sudo snap install snap-store-proxy-client
 
 微信
 https://www.ubuntukylin.com/applications/
+
+remmina(windows remote desktop)
 ```
