@@ -9,6 +9,7 @@ sudo snap install snap-store-proxy-client
 微信
 https://www.ubuntukylin.com/applications/
 
+windows 
 remmina(windows remote desktop)
 
 7zip
@@ -16,6 +17,13 @@ sudo apt install p7zip-full
 7z x origin.7z
 7z a -t7z target.7z folder
 
-remove app
+删除应用
 sudo apt-get --purge remove -y appname
+# snap
+sudo snap list
+sudo snap remove chromium firefox
+# 清空
+sudo apt autoremove
+sudo apt autopurge
+sudo apt autoclean
 ```
