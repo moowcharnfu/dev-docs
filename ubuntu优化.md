@@ -32,4 +32,8 @@ sudo apt autoclean
 # 删除应用图标
 sudo nautilus /usr/share/applications/
 sudo nautilus ~/.local/share/applications/
+
+#　禁用休眠
+systemctl status sleep.target
+sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
 ```
