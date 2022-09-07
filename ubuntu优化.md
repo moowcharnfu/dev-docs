@@ -1,4 +1,6 @@
 ```
+远程软件需要用unbuntu on xorg登陆
+echo $XDG_SESSION_TYPE
 
 ubuntu snap商店国内加速
 sudo apt-get install snapd
