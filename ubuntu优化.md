@@ -6,7 +6,7 @@ sudo snap install snap-store
 sudo snap install snap-store-proxy
 sudo snap install snap-store-proxy-client
 
-微信
+微信, 企业微信,（qq上腾讯官网）
 https://www.ubuntukylin.com/applications/
 
 windows 
@@ -29,4 +29,5 @@ sudo apt autoclean
 
 # 删除应用图标
 sudo nautilus /usr/share/applications/
+sudo nautilus ~/.local/share/applications/
 ```
