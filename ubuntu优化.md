@@ -45,4 +45,7 @@ sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.ta
 
 常用软件
 gimp(图像编辑),vlc(视频播放),kdenlive/shotcut(),snap-store,nap-store-proxy,snap-store-proxy-client(应用商店)
+
+字体下载
+https://fontsdata.com/find.php?q=mt+extra
 ```
