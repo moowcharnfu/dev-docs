@@ -8,10 +8,16 @@ sudo snap install snap-store
 sudo snap install snap-store-proxy
 sudo snap install snap-store-proxy-client
 
-微信, 企业微信,（qq上腾讯官网）
+微信, 企业微信(deepin),（qq上腾讯官网）
+微信
 https://www.ubuntukylin.com/applications/
+企业微信
+git clone https://gitee.com/wszqkzqk/deepin-wine-for-ubuntu.git
+http://packages.deepin.com/deepin/pool/non-free/d/deepin.com.weixin.work/
+企业微信头像问题
+sudo apt install libjpeg62:i386
 
-windows 
+windows远程桌面
 remmina(windows remote desktop)
 
 7zip
