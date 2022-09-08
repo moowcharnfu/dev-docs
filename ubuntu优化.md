@@ -42,4 +42,7 @@ sudo nautilus ~/.local/share/applications/
 #　禁用休眠
 systemctl status sleep.target
 sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+
+常用软件
+gimp(图像编辑),vlc(视频播放),snap-store,nap-store-proxy,snap-store-proxy-client(应用商店)
 ```
