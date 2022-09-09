@@ -16,6 +16,9 @@ sudo ln -s /usr/local/python/bin/pip3 /usr/bin/pip
 python -V
 
 
+################### miniconda集成python
+https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/
+
 =================================================
 调整pip镜像使用国内镜像
 [windows] %USERPROFILE% 下创建pip目录, 然后创建pip.ini
