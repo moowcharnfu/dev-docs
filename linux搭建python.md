@@ -25,6 +25,8 @@ extra-index-url =
  http://mirrors.aliyun.com/pypi/simple
  http://pypi.douban.com/simple
  http://pypi.mirrors.ustc.edu.cn/simple
+ https://mirrors.huaweicloud.com/repository/pypi/simple
+ http://mirrors.cloud.tencent.com/pypi/simple
 
 [install]
 trusted-host = 
@@ -32,6 +34,8 @@ trusted-host =
  mirrors.aliyun.com
  pypi.douban.com
  pypi.mirrors.ustc.edu.cn
+ mirrors.huaweicloud.com
+ mirrors.cloud.tencent.com
 
 [linux] ~ 下创建pip目录, 然后创建pip.conf
 [global]
@@ -40,6 +44,8 @@ extra-index-url =
  http://mirrors.aliyun.com/pypi/simple
  http://pypi.douban.com/simple
  http://pypi.mirrors.ustc.edu.cn/simple
+ https://mirrors.huaweicloud.com/repository/pypi/simple
+ http://mirrors.cloud.tencent.com/pypi/simple
 
 [install]
 trusted-host = 
@@ -47,5 +53,7 @@ trusted-host =
  mirrors.aliyun.com
  pypi.douban.com
  pypi.mirrors.ustc.edu.cn
+ mirrors.huaweicloud.com
+ mirrors.cloud.tencent.com
  =================================================
 ```
