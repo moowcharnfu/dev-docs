@@ -12,6 +12,7 @@ sudo snap install snap-store-proxy-client
 微信
 https://www.ubuntukylin.com/applications/
 企业微信
+!!!!  https://deepin-wine.i-m.dev/  !!!!
 git clone https://gitee.com/wszqkzqk/deepin-wine-for-ubuntu.git
 http://packages.deepin.com/deepin/pool/non-free/d/deepin.com.weixin.work/
 企业微信头像问题
