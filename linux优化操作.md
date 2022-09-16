@@ -16,6 +16,10 @@ echo 3 > /proc/sys/vm/drop_caches
 
 netstat -n | awk '/^tcp/ {++state[$NF]} END {for(key in state) print key,"t",state[key]}'
 
+清理僵尸进程
+
+ps -e -o ppid,stat |grep Z| cut -d '' -f2| awk '{print $1}' | xargs kill -9
+
 linux内核参数优化(time_wait)
 
 <pre>
