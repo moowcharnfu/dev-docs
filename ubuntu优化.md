@@ -18,6 +18,12 @@ http://packages.deepin.com/deepin/pool/non-free/d/deepin.com.weixin.work/
 企业微信头像问题
 sudo apt install libjpeg62:i386
 
+winetricks 32架构问题
+rm -rf ~/.wine/
+WINEARCH=win32 WINEPREFIX=~/.wine winecfg
+winetricks riched20
+
+
 windows远程桌面
 remmina(windows remote desktop)
 
