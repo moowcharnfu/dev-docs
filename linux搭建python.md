@@ -40,7 +40,7 @@ trusted-host =
  mirrors.huaweicloud.com
  mirrors.cloud.tencent.com
 
-[linux] ~ 下创建pip目录, 然后创建pip.conf
+[linux] ~ 下创建.pip目录, 然后创建pip.conf
 [global]
 index-url = https://pypi.tuna.tsinghua.edu.cn/simple
 extra-index-url = 
