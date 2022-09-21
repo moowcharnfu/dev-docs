@@ -15,6 +15,11 @@ https://www.ubuntukylin.com/applications/
 !!!!  https://deepin-wine.i-m.dev/  !!!!
 git clone https://gitee.com/wszqkzqk/deepin-wine-for-ubuntu.git
 http://packages.deepin.com/deepin/pool/non-free/d/deepin.com.weixin.work/
+####  企业微信需要注释掉 /opt/apps/com.qq.weixin.work.deepin/files/run.sh 下面的两行代码, 不然会无法启动 ####
+#### 
+   #export WINEDLLPATH=/opt/$APPRUN_CMD/lib:/opt/$APPRUN_CMD/lib64
+   #export WINEPREDLL="$ARCHIVE_FILE_DIR/dlls"
+#### 
 企业微信头像问题
 sudo apt install libjpeg62:i386
 
