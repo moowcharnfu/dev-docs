@@ -52,5 +52,12 @@ jmap -F -dump:live,format=b,file=/tmp/[pid].hprof [pid]
 
 然后用MAT加载日志文件来观察
 
+jmap直接观察内存消耗
+查看java进程 
+grep java  | grep -v grep
+查看某个java进程的总内存消耗
+jmap -histo:live [pid] | awk '{sum+=$3} END {print sum/1024/1024"M"}'
+查看某个java进程的内存消耗前10名
+jmap -histo:live [pid] | awk '{print $3/1024/1024"M"}'| sort -rn | head -n 10
 
 ```
