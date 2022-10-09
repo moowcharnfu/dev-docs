@@ -26,5 +26,11 @@ post请求(-s表示lua脚本路径)
 wrk -t1 -c1 -d1s -s test.lua http://******/**
 
 post文件请求
+# 需要安装lua依赖包
+1)lfs
+sudo apt install luarocks
+sudo luarocks install luafilesystem
+sudo luarocks install http
+sudo luarocks install --server=https://luarocks.cn/ ltn12
 
 ```
