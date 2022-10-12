@@ -60,4 +60,7 @@ jmap -histo:live [pid] | awk '{sum+=$3} END {print sum/1024/1024"M"}'
 查看某个java进程的内存消耗前10名
 jmap -histo:live [pid] | awk '{print $3/1024/1024"M"}'| sort -rn | head -n 10
 
+查看进程内存情况
+ps -p [pid] -o rss,vsz
+
 ```
