@@ -60,4 +60,23 @@ gimp(图像编辑),vlc(视频播放),kdenlive/shotcut(视频编辑),snap-store,n
 
 字体下载
 https://fontsdata.com/find.php?q=mt+extra
+
+###### dpkg错误修复 #####
+# backup
+sudo mv /var/lib/dpkg/info /var/lib/dpkg/info_old
+# new
+sudo mkdir /var/lib/dpkg/info
+# update
+sudo apt-get update
+sudo apt-get -f install
+# copy new to old
+sudo mv /var/lib/dpkg/info/* /var/lib/dpkg/info_old/
+# del new
+sudo rm -rf /var/lib/dpkg/info
+# recovert
+sudo mv /var/lib/dpkg/info_old /var/lib/dpkg/info
+
+---
+dpkg --get-selections | grep linux-
+sudo dpkg --configure -a
 ```
