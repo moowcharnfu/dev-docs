@@ -8,25 +8,8 @@ sudo snap install snap-store
 sudo snap install snap-store-proxy
 sudo snap install snap-store-proxy-client
 
-微信, 企业微信(deepin),（qq上腾讯官网）
-微信
-https://www.ubuntukylin.com/applications/
-企业微信
-!!!!  https://deepin-wine.i-m.dev/  !!!!
-git clone https://gitee.com/wszqkzqk/deepin-wine-for-ubuntu.git
-http://packages.deepin.com/deepin/pool/non-free/d/deepin.com.weixin.work/
-####  企业微信需要注释掉 /opt/apps/com.qq.weixin.work.deepin/files/run.sh 下面的两行代码, 不然会无法启动 ####
-#### 
-   #export WINEDLLPATH=/opt/$APPRUN_CMD/lib:/opt/$APPRUN_CMD/lib64
-   #export WINEPREDLL="$ARCHIVE_FILE_DIR/dlls"
-#### 
-企业微信头像问题
-sudo apt install libjpeg62:i386
-
-winetricks 32架构问题
-rm -rf ~/.wine/
-WINEARCH=win32 WINEPREFIX=~/.wine winecfg
-winetricks riched20
+微信, 企业微信, qq
+用ubuntu安装虚拟机virtualbox和virtualbox-guest-additions-iso扩展插件,然后下载一个小于4G的windows系统(ed2k://|file|cn_windows_10_business_editions_version_1909_updated_jan_2020_x86_dvd_e861101e.iso|3802454016|5B909C955D8A65CA2002D8594D137A63|/)+共享目录就可以无缝使用腾讯产品了
 
 
 windows远程桌面
@@ -57,6 +40,10 @@ sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.ta
 
 常用软件
 gimp(图像编辑),vlc(视频播放),kdenlive/shotcut(视频编辑),snap-store,snap-store-proxy,snap-store-proxy-client(应用商店)
+vlc地址
+http://devimages.apple.com.edgekey.net/streaming/examples/bipbop_4x3/gear2/prog_index.m3u8
+rtmp://mobliestream.c3tv.com:554/live/goodtv.sdp
+rtmp://liteavapp.qcloud.com/live/liteavdemoplayerstreamid
 
 字体下载
 https://fontsdata.com/find.php?q=mt+extra
