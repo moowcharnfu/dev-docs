@@ -9,7 +9,8 @@ sudo snap install snap-store-proxy
 sudo snap install snap-store-proxy-client
 
 微信, 企业微信, qq
-用ubuntu安装虚拟机virtualbox和virtualbox-guest-additions-iso扩展插件,然后下载一个小于4G的windows系统(ed2k://|file|cn_windows_10_business_editions_version_1909_updated_jan_2020_x86_dvd_e861101e.iso|3802454016|5B909C955D8A65CA2002D8594D137A63|/)+共享目录就可以无缝使用腾讯产品了
+用ubuntu安装虚拟机virtualbox和virtualbox-guest-additions-iso扩展插件,
+然后下载一个小于4G的windows系统(ed2k://|file|cn_windows_10_business_editions_version_1909_updated_jan_2020_x86_dvd_e861101e.iso|3802454016|5B909C955D8A65CA2002D8594D137A63|/)+共享目录就可以无缝使用腾讯产品了
 
 
 windows远程桌面
