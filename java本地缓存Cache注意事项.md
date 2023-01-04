@@ -34,6 +34,8 @@ if (CollectionUtils.isEmpty(treeDTOList)) {
 }
 删除
 labelTreeCache.invalidateAll();
+# 单个删除性能更好
+labelTreeCache.invalidate(key);
 ```
 
 ```
@@ -47,4 +49,6 @@ if (null == value) {
 }
 删除
 _5_EMAIL_NUMBER_CODE_CACHE.invalidateAll();
+# 单个删除性能更好
+_5_EMAIL_NUMBER_CODE_CACHE.invalidate(key);
 ```
