@@ -67,4 +67,19 @@ sudo mv /var/lib/dpkg/info_old /var/lib/dpkg/info
 ---
 dpkg --get-selections | grep linux-
 sudo dpkg --configure -a
+
+# 输入法卡顿重启大法
+pkill -f ibus-daemon
+ibus-daemon -r -d -x
+sleep 0.5
+ibus restart
+sleep 0.5
+
+# apt优化
+sudo apt autopurge
+sudo apt autoremove
+sudo apt autoclean
+sudo apt update
+sudo apt upgrade
+
 ```
