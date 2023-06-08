@@ -22,7 +22,7 @@ refreshAfterWrite的特点是，在refresh的过程中，严格限制只有1个�
 ```
 com.github.benmanes.caffeine.cache.Cache方式(更高效)
 声明
-Cache<String, List<TreeDTO>> labelTreeCache = Caffeine.newBuilder().expireAfterWrite(Duration.ofMinutes(30L)).maximumSize(1000L).build();
+Cache<String, List<TreeDTO>> labelTreeCache = Caffeine.newBuilder().expireAfterWrite(Duration.ofMinutes(30L)).initialCapacity(100).maximumSize(1000L).build();
 添加
 List<TreeDTO> treeDTOList = labelTreeCache.getIfPresent(key);
 if (CollectionUtils.isEmpty(treeDTOList)) {
