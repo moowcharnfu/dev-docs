@@ -1,6 +1,6 @@
 删除2天前的log文件
 
-find ./ -mtime +2 -name "*.log" | xargs -I {} rm -rf {}
+find ./ -mtime +2 -name "*.log" -exec rm -rf {} \;
 
 内存释放
 
