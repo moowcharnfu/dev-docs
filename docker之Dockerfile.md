@@ -60,7 +60,7 @@ ADD ai-manager-1.0.0.jar /usr/app/
 ENV JAVA_OPTIONS ""
 ENV HOME /usr/app
 WORKDIR /usr/app/
-ENTRYPOINT ["sh", "-c", "java $JAVA_OPTIONS  -jar ai-manager-1.0.0.jar"]
+ENTRYPOINT ["sh", "-c", "java -jar $JAVA_OPTIONS ai-manager-1.0.0.jar"]
 
 <!-- Dockerfile方式 -->
     <plugin>
