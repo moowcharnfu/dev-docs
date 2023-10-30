@@ -14,6 +14,10 @@ from concurrent.futures import ThreadPoolExecutor
 with ThreadPoolExecutor(max_workers=1) as t:
   t.submit(函数名, 参数)
 
+# 开进程运行指令
+out = subprocess.run(指令, shell=True,
+                     stderr=subprocess.STDOUT)
+
 # request #
 # 文件上传
 zipTmp = open(dir + '.zip', 'rb')
