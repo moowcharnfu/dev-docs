@@ -22,41 +22,13 @@ https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/
 =================================================
 调整pip镜像使用国内镜像
 [windows] %USERPROFILE% 下创建pip目录, 然后创建pip.ini
+[非windows] ~下创建pip目录, 然后创建pip.conf
+# pip/pip.ini (Windows)
+# pip/pip.conf (Unix, macOS)
+
 [global]
-index-url = https://pypi.tuna.tsinghua.edu.cn/simple
-extra-index-url = 
- http://mirrors.aliyun.com/pypi/simple
- http://pypi.douban.com/simple
- http://pypi.mirrors.ustc.edu.cn/simple
- https://mirrors.huaweicloud.com/repository/pypi/simple
- http://mirrors.cloud.tencent.com/pypi/simple
+timeout=60
+index-url=https://pypi.tuna.tsinghua.edu.cn/simple
+extra-index-url=https://mirrors.aliyun.com/pypi/simple, https://mirrors.cloud.tencent.com/pypi/simple, https://mirrors.bfsu.edu.cn/pypi/web/simple, https://mirrors.huaweicloud.com/repository/pypi/simple, https://mirrors.cloud.tencent.com/pypi/simple
 
-[install]
-trusted-host = 
- pypi.tuna.tsinghua.edu.cn
- mirrors.aliyun.com
- pypi.douban.com
- pypi.mirrors.ustc.edu.cn
- mirrors.huaweicloud.com
- mirrors.cloud.tencent.com
-
-[linux] ~ 下创建.pip目录, 然后创建pip.conf
-[global]
-index-url = https://pypi.tuna.tsinghua.edu.cn/simple
-extra-index-url = 
- http://mirrors.aliyun.com/pypi/simple
- http://pypi.douban.com/simple
- http://pypi.mirrors.ustc.edu.cn/simple
- https://mirrors.huaweicloud.com/repository/pypi/simple
- http://mirrors.cloud.tencent.com/pypi/simple
-
-[install]
-trusted-host = 
- pypi.tuna.tsinghua.edu.cn
- mirrors.aliyun.com
- pypi.douban.com
- pypi.mirrors.ustc.edu.cn
- mirrors.huaweicloud.com
- mirrors.cloud.tencent.com
- =================================================
 ```
