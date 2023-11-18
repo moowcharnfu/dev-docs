@@ -22,9 +22,9 @@ https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/
 =================================================
 调整pip镜像使用国内镜像
 [windows] %USERPROFILE% 下创建pip目录, 然后创建pip.ini
-[非windows] ~下创建pip目录, 然后创建pip.conf
+[非windows] ~下创建.pip目录, 然后创建pip.conf
 # pip/pip.ini (Windows)
-# pip/pip.conf (Unix, macOS)
+# .pip/pip.conf (Unix, macOS)
 
 [global]
 timeout=60
