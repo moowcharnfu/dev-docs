@@ -93,11 +93,16 @@ kubectl describe nodes
 12.部署dashboard
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
 
-排查问题
-journalctl -fu kubelet
+################################# 排查问题 ##########################################
+journalctl -xefu kubelet
 kubectl get componentstatus
 
-"The connection to the server 172.17.204.175:6443 was refused - did you specify the right host or port?" 可能问题时间不同步,调整成相同时区相同时间即可
+证书问题
+sudo kubeadm certs check-expiration
+sudo kubeadm certs renew all
+
+可能问题时间不同步,调整成相同时区相同时间即可
+"The connection to the server 172.17.204.175:6443 was refused - did you specify the right host or port?"
 sudo timedatectl set-timezone Asia/Shanghai
 
 ```
