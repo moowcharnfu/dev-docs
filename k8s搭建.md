@@ -74,7 +74,7 @@ sudo kubeadm init --config=kubeadm-config.yaml
 
 8. 部署网络插件calico(3台都运行)
 master运行
-kubectl apply -f https://docs.projectcalico.org/v3.21/manifests/calico.yaml
+kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
 拷贝到其他节点
 sudo scp /etc/cni/net.d/10-calico.conflist pc@k8s-n1:/etc/cni/net.d/
 sudo scp /etc/cni/net.d/calico-kubeconfig pc@k8s-n2:/etc/cni/net.d/
@@ -89,6 +89,9 @@ sudo kubeadmin join *******
 11. master 查看集群情况
 kubectl get nodes
 kubectl describe nodes
+
+12.部署dashboard
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
 
 排查问题
 journalctl -fu kubelet
