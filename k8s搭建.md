@@ -90,6 +90,11 @@ sudo kubeadmin join *******
 kubectl get nodes
 kubectl describe nodes
 
+排查问题
+journalctl -fu kubelet
+kubectl get componentstatus
 
+"The connection to the server 172.17.204.175:6443 was refused - did you specify the right host or port?" 可能问题时间不同步,调整成相同时区相同时间即可
+sudo timedatectl set-timezone Asia/Shanghai
 
 ```
