@@ -68,6 +68,18 @@ kubeadm config images list --config=kubeadm-config.yaml
 拉取镜像
 sudo kubeadm config images pull --config=kubeadm-config.yaml
 
+##查看已安装的镜像
+需要配置/etc/crictl.yaml
+runtime-endpoint: unix:///run/containerd/containerd.sock
+image-endpoint: unix:///run/containerd/containerd.sock
+timeout: 10
+debug: false
+
+查看镜像
+sudo crictl images
+查看进程
+sudo crictl ps -a
+
 7.初始化master节点
 # 由于默认拉取镜像地址k8s.gcr.io国内无法访问，这里需要指定阿里云镜像仓库地址
 sudo kubeadm init --config=kubeadm-config.yaml
