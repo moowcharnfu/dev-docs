@@ -101,6 +101,11 @@ sudo kubeadmin join *******
 11. master 查看集群情况
 kubectl get nodes
 kubectl describe nodes
+包含主机记录等
+kubectl get nodes -o wide
+kubectl get pods --all-namespaces -o wide
+如果在同一个节点上,建议重新分配一下coredns保证其高可用性
+kubectl --namespace kube-system rollout restart deployment coredns
 
 12.部署dashboard
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
