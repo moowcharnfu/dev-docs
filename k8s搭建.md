@@ -13,7 +13,14 @@ crictl:下载镜像用
 
 sudo apt install containerd socat conntrack docker.io
 开机启动
-sudo systemctl enable docker && sudo systemctl start docker 
+sudo systemctl enable docker && sudo systemctl start docker
+
+把containerd镜像换成国内
+containerd config default > /etc/containerd/config.toml
+修改
+sandbox_image = "registry.cn-hangzhou.aliyuncs.com/google_containers/pause:3.8"
+重启
+sudo systemctl enable containerd && sudo systemctl restart containerd
 
 # 安装基础软件并设置源
 sudo apt-get install -y ca-certificates curl software-properties-common apt-transport-https
