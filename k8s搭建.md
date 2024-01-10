@@ -115,7 +115,49 @@ kubectl get pods --all-namespaces -o wide
 kubectl --namespace kube-system rollout restart deployment coredns
 
 12.部署dashboard
-kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
+wget -O k8s-dashboard.yaml https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
+wget -O k8s-dashboard.yaml https://raw.gitmirror.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml (加速访问)
+编辑k8s-dashboard.yaml
+>  1.type: NodePort + nodePort: 30001
+kind: Service
+apiVersion: v1
+metadata:
+  labels:
+    k8s-app: kubernetes-dashboard
+  name: kubernetes-dashboard
+  namespace: kubernetes-dashboard
+spec:
+  type: NodePort
+  ports:
+    - port: 443
+      targetPort: 8443
+      nodePort: 30001
+  selector:
+    k8s-app: kubernetes-dashboard
+
+>  2. 两个Deployment下面containers增加一行nodeName: k8s-master部署到主节点
+kind: Deployment
+......
+    spec:
+      nodeName: k8s-master
+      containers:
+
+部署
+kubectl apply -f k8s-dashboard.yaml
+
+查看POD状态
+kubectl get pods -n kubernetes-dashboard
+查看访问端口
+kubectl get svc -n kubernetes-dashboard
+创建登陆token
+kubectl -n kubernetes-dashboard create token kubernetes-dashboard
+
+访问
+https://172.17.204.175:30001/#/login
+
+卸载
+kubectl delete -f k8s-dashboard.yaml
+
 
 ################################# 排查问题 ##########################################
 journalctl -xefu kubelet
