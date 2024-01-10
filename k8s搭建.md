@@ -19,6 +19,7 @@ sudo systemctl enable docker && sudo systemctl start docker
 containerd config default > /etc/containerd/config.toml
 修改
 sandbox_image = "registry.cn-hangzhou.aliyuncs.com/google_containers/pause:3.8"
+避免apiserver老是重启 调整 SystemdCgroup = true
 重启
 sudo systemctl enable containerd && sudo systemctl restart containerd
 
