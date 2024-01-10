@@ -118,7 +118,7 @@ kubectl --namespace kube-system rollout restart deployment coredns
 wget -O k8s-dashboard.yaml https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
 wget -O k8s-dashboard.yaml https://raw.gitmirror.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml (加速访问)
 编辑k8s-dashboard.yaml
->  1.type: NodePort + nodePort: 30001
+> 增加 type: NodePort + nodePort: 30001
 kind: Service
 apiVersion: v1
 metadata:
@@ -135,15 +135,33 @@ spec:
   selector:
     k8s-app: kubernetes-dashboard
 
->  2. 两个Deployment下面containers增加一行nodeName: k8s-master部署到主节点
-kind: Deployment
-......
-    spec:
-      nodeName: k8s-master
-      containers:
-
 部署
 kubectl apply -f k8s-dashboard.yaml
+
+创建超级管理员
+dashboard-adminuser.yaml
+
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: admin-user
+  namespace: kubernetes-dashboard
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: admin-user
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+  - kind: ServiceAccount
+    name: admin-user
+    namespace: kubernetes-dashboard
+
+部署
+kubectl apply -f dashboard-adminuser.yaml
 
 查看POD状态
 kubectl get pods -n kubernetes-dashboard
@@ -151,6 +169,7 @@ kubectl get pods -n kubernetes-dashboard
 kubectl get svc -n kubernetes-dashboard
 创建登陆token
 kubectl -n kubernetes-dashboard create token kubernetes-dashboard
+kubectl -n kubernetes-dashboard create token admin-user
 
 访问
 https://172.17.204.175:30001/#/login
