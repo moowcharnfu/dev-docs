@@ -115,7 +115,7 @@ kubectl get pods --all-namespaces -o wide
 如果在同一个节点上,建议重新分配一下coredns保证其高可用性
 kubectl --namespace kube-system rollout restart deployment coredns
 
-12.部署dashboard
+12.部署dashboard [尽量内部访问,不要外网访问]
 wget -O k8s-dashboard.yaml https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml
 wget -O k8s-dashboard.yaml https://raw.gitmirror.com/kubernetes/dashboard/v2.7.0/aio/deploy/recommended.yaml (加速访问)
 编辑k8s-dashboard.yaml
@@ -135,6 +135,10 @@ spec:
       nodePort: 30001
   selector:
     k8s-app: kubernetes-dashboard
+
+> ClusterRoleBinding 把集群角色变成 name: cluster-admin
+kind: ClusterRole
+  name: cluster-admin
 
 部署
 kubectl apply -f k8s-dashboard.yaml
