@@ -195,4 +195,67 @@ sudo kubeadm certs renew all
 "The connection to the server 172.17.204.175:6443 was refused - did you specify the right host or port?"
 sudo timedatectl set-timezone Asia/Shanghai
 
+
+------------------------
+nginx.yaml示例
+# 容器编排Deployment动态扩缩容
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: nginx-scaler1
+  namespace: default
+spec:
+  maxReplicas: 10
+  minReplicas: 3
+  scaleTargetRef:                         # 将要扩展的目标引用
+    apiVersion: apps/v1
+    kind: Deployment
+    name: nginx-deployment1
+    namespace: default
+  targetCPUUtilizationPercentage: 80      # cpu使用超过80%就扩容，低于就缩容
+
+---
+# 部署配置
+apiVersion: apps/v1  
+kind: Deployment  
+metadata:  
+  name: nginx-deployment1
+  namespace: default  
+spec:  
+  replicas: 3 # 部署3个实例  
+  selector:  
+    matchLabels:  
+      app: nginx 
+  strategy:
+    type: RollingUpdate # 滚动发布
+    rollingUpdate:
+      maxSurge: 1 # maxSurge参数表示在升级过程中最多可以比原先设置多出的POD数量
+      maxUnavailable: 1 # maxUnavailable参数表示在升级过程中最多有多少个POD处于无法提供服务的状态
+  template:  
+    metadata:  
+      labels:  
+        app: nginx  
+    spec:  
+      containers:  
+      - name: nginx  
+        image: nginx:latest # 使用拉取的Nginx镜像
+        imagePullPolicy: IfNotPresent #不存在再摘取(注意版本覆盖情况)
+        ports:  
+        - containerPort: 80 # Nginx监听的端口号
+
+
+---
+# 服务配置
+apiVersion: v1  
+kind: Service  
+metadata:  
+  name: nginx-service1
+  namespace: default
+spec:  
+  selector:  
+    app: nginx # 选择与Deployment匹配的标签  
+  ports:  
+    - protocol: TCP  
+      port: 80 # 服务的端口号，与Nginx监听的端口号一致
+
 ```
