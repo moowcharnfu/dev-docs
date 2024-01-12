@@ -196,8 +196,9 @@ sudo kubeadm certs renew all
 sudo timedatectl set-timezone Asia/Shanghai
 
 
-------------------------
-nginx.yaml示例
+---------------------------------
+==========nginx.yaml示例 =======
+
 # 容器编排Deployment动态扩缩容
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
