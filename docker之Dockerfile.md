@@ -1,3 +1,4 @@
+```
 #oracle-jdk镜像下载到docker容器里
 
 FROM primetoninc/jdk:1.8
@@ -37,14 +38,13 @@ RUN ["sh", "-c", "java -version"]
 
 构建、执行并查看日志
 
-docker build -t [标签名] -f Dockerfile .
+docker build -t [标签名:版本号] -f Dockerfile .
 
-docker run -d [标签名] --name [别名]
-
+docker run -d --name [别名] [标签名:版本号]
+docker exec -it [别名] /bin/bash
 docker logs -f [别名]
 
 
-```
 spring-boot集成docker插件配置示例
 
 <!--镜像仓库的项目-->
