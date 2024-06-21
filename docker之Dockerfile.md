@@ -38,7 +38,7 @@ RUN ["sh", "-c", "java -version"]
 
 构建、执行并查看日志
 
-docker build -t [标签名:版本号] -f Dockerfile .
+docker build --label version=版本号 -t [标签名:版本号] -f Dockerfile .
 
 docker run -d --name [别名] [标签名:版本号]
 docker exec -it [别名] /bin/bash
