@@ -40,7 +40,7 @@ RUN ["sh", "-c", "java -version"]
 
 docker build --label version=版本号 -t [标签名:版本号] -f Dockerfile .
 
-docker run -d --name [别名] [标签名:版本号]
+docker run -d --restart=always --name [别名] -p 主机端口:容器端口 -v 主机目录:容器目录 [标签名:版本号]
 docker exec -it [别名] /bin/bash
 docker logs -f [别名]
 
