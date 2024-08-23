@@ -54,7 +54,7 @@ cat /etc/docker/daemon.json
   
   "insecure-registries": ["192.168.1.1:5000" ],
 
-  "bip": "172.22.001/24" #docker0网桥段配置
+  "bip": "172.22.0.1/24" #docker0网桥段配置
 }
 
 systemctl daemon-reload
