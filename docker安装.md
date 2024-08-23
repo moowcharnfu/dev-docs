@@ -52,8 +52,9 @@ cat /etc/docker/daemon.json
 
   "registry-mirrors": ["http://hub-mirror.c.163.com", "https://docker.mirrors.ustc.edu.cn", "https://registry.docker-cn.com"],
   
-  "insecure-registries": ["192.168.1.1:5000" ]
-  
+  "insecure-registries": ["192.168.1.1:5000" ],
+
+  "bip": "172.22.001/24" #docker0网桥段配置
 }
 
 systemctl daemon-reload
