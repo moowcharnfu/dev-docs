@@ -8,6 +8,24 @@ QProcess.startDetached(指令), 分离式运行指令, 如dir/python *.py, killa
 
 QTimer.stop() / QTimer.start(毫秒) 停止/每隔几秒触发,  !!!gui关闭定时器就关闭!!!
 
+
+# 设计界面 和 转py
+[系统]
+sudo apt install build-essential pyqt5-dev-tools qttools5-dev-tools qttools5-dev
+[python]
+pip install pyqt5 pyqt5-tools
+
+[pycharm extenal tools]
+[设计]
+Program:/bin/designer
+Arguments:$FileDir$/$FileName$
+WorkDir:$FileDir$
+
+[转py]
+Program:/bin/pyuic5
+Arguments:$FileName$ -o $FileNameWithoutExtension$.py
+WorkDir:$FileDir$
+
 # 线程池 #
 from concurrent.futures import ThreadPoolExecutor
 # 多线程操作
