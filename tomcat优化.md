@@ -32,3 +32,8 @@ server.tomcat.min-spare-threads=100
 server.tomcat.max-threads=300
 
 server.tomcat.max-connections=10000
+
+
+
+服务启动慢可以使用
+-Djava.security.egd=file:/dev/urandom
